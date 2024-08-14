@@ -19,466 +19,595 @@
   <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
   <link rel="stylesheet" href="assets/css/owl.css">
   <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/log.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
   <!--
 
 
 
 -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
 </head>
 
 <body>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
+  <div class="modal fade " id="loadingModal" tabindex="-1" aria-labelledby="loadingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="frame">
+            <div class="nav-madal">
+              <ul class="links">
+                <li class="signin-active"><a class="btn">SIGN IN</a></li>
+                <li class="signup-inactive"><a class="btn">SIGN UP</a></li>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </ul>
 
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            <!-- ***** Logo Start ***** -->
-            <a href="index.html" class="logo">
-              <img src="assets/images/logo.png" alt="">
-            </a>
-            <!-- ***** Logo End ***** -->
-            <!-- ***** Menu Start ***** -->
-            <ul class="nav">
-              <li><a href="index.html" class="active">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="deals.html">Deals</a></li>
-              <li><a href="reservation.html">Reservation</a></li>
-              <li><a href="reservation.html">Book Yours</a></li>
-              <div class="main-button">
-                <a href="about.html"> Sign Up</a>
-              </div>
-            </ul>
-            <a class='menu-trigger'>
-              <span>Menu</span>
-            </a>
-            <!-- ***** Menu End ***** -->
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+            </div>
+            <div ng-app ng-init="checked = false">
+              <form class="form-signin" action="" method="post" name="form">
+                <label for="username">Username</label>
+                <input class="form-styling" type="text" name="username" required="" placeholder="" />
+                <label for="password">Password</label>
+                <input class="form-styling" type="password" name="password" required="" placeholder="" />
+                <input type="checkbox" id="checkbox" />
+                <label for="checkbox"><span class="ui"></span>Keep me signed in</label>
 
-  <!-- ***** Main Banner Area Start ***** -->
-  <section id="section-1">
-    <div class="content-slider">
-      <input type="radio" id="banner1" class="sec-1-input" name="banner" checked>
-      <input type="radio" id="banner2" class="sec-1-input" name="banner">
-      <input type="radio" id="banner3" class="sec-1-input" name="banner">
-      <input type="radio" id="banner4" class="sec-1-input" name="banner">
-      <div class="slider">
-        <div id="top-banner-1" class="banner">
-          <div class="banner-inner-wrapper header-text">
-            <div class="main-caption">
-              <h2>Take a Glimpse Into The Beautiful Country Of:</h2>
-              <h1>Caribbean</h1>
-              <div class="border-button"><a href="about.html">Go There</a></div>
-            </div>
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="more-info">
-                    <div class="row">
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <i class="fa fa-users"></i>
-                        <h4><span>Creators:</span><br>150+</h4>
-                      </div>
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <i class="fa fa-dollar-sign"></i>
-                        <h4><span>Start Price:</span><br>$500</h4>
-                      </div>
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <i class="fa fa-globe"></i>
-                        <h4><span>Countries:</span><br>3</h4>
-                      </div>
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <div class="main-button">
-                          <a href="contact.html">Get in Touch</a>
-                        </div>
-                      </div>
-                      
-                    </div>
-                  </div>
+                <div class="btn-animate">
+                  <a class="btn-signin">SIGN IN</a>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="top-banner-2" class="banner">
-          <div class="banner-inner-wrapper header-text">
-            <div class="main-caption">
-              <h2>Take a Glimpse Into The Beautiful Country Of:</h2>
-              <h1>Switzerland</h1>
-              <div class="border-button"><a href="about.html">Go There</a></div>
-            </div>
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="more-info">
-                    <div class="row">
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <i class="fa fa-user"></i>
-                        <h4><span>Population:</span><br>8.66 M</h4>
-                      </div>
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <i class="fa fa-globe"></i>
-                        <h4><span>Territory:</span><br>41.290 KM<em>2</em></h4>
-                      </div>
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <i class="fa fa-home"></i>
-                        <h4><span>AVG Price:</span><br>$1.100.200</h4>
-                      </div>
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <div class="main-button">
-                          <a href="about.html">Explore More</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="top-banner-3" class="banner">
-          <div class="banner-inner-wrapper header-text">
-            <div class="main-caption">
-              <h2>Take a Glimpse Into The Beautiful Country Of:</h2>
-              <h1>France</h1>
-              <div class="border-button"><a href="about.html">Go There</a></div>
-            </div>
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="more-info">
-                    <div class="row">
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <i class="fa fa-user"></i>
-                        <h4><span>Population:</span><br>67.41 M</h4>
-                      </div>
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <i class="fa fa-globe"></i>
-                        <h4><span>Territory:</span><br>551.500 KM<em>2</em></h4>
-                      </div>
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <i class="fa fa-home"></i>
-                        <h4><span>AVG Price:</span><br>$425.600</h4>
-                      </div>
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <div class="main-button">
-                          <a href="about.html">Explore More</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="top-banner-4" class="banner">
-          <div class="banner-inner-wrapper header-text">
-            <div class="main-caption">
-              <h2>Take a Glimpse Into The Beautiful Country Of:</h2>
-              <h1>Thailand</h1>
-              <div class="border-button"><a href="about.html">Go There</a></div>
-            </div>
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="more-info">
-                    <div class="row">
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <i class="fa fa-user"></i>
-                        <h4><span>Population:</span><br>69.86 M</h4>
-                      </div>
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <i class="fa fa-globe"></i>
-                        <h4><span>Territory:</span><br>513.120 KM<em>2</em></h4>
-                      </div>
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <i class="fa fa-home"></i>
-                        <h4><span>AVG Price:</span><br>$165.450</h4>
-                      </div>
-                      <div class="col-lg-3 col-sm-6 col-6">
-                        <div class="main-button">
-                          <a href="about.html">Explore More</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <nav>
-        <div class="controls">
-          <label for="banner1"><span class="progressbar"><span class="progressbar-fill"></span></span><span
-              class="text">1</span></label>
-          <label for="banner2"><span class="progressbar"><span class="progressbar-fill"></span></span><span
-              class="text">2</span></label>
-          <label for="banner3"><span class="progressbar"><span class="progressbar-fill"></span></span><span
-              class="text">3</span></label>
-          <label for="banner4"><span class="progressbar"><span class="progressbar-fill"></span></span><span
-              class="text">4</span></label>
-        </div>
-      </nav>
-    </div>
-  </section>
-  <!-- ***** Main Banner Area End ***** -->
+              </form>
 
-  <div class="visit-country">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5">
-          <div class="section-heading">
-            <h2>Discover Creative Content Creators</h2>
-            <p>Do you want to save time and money? Benefit from UGC services and avoid spending hours searching for content creators. Imagine being able to create diverse content quickly and affordably.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="items">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="item">
-                  <div class="row">
-                    <div class="col-lg-4 col-sm-5">
-                      <div class="image">
-                        <img src="assets/images/content Creator.jpg" alt="">
-                      </div>
-                    </div>
-                    <div class="col-lg-8 col-sm-7">
-                      <div class="right-content">
-                        <h4>Randa</h4>
-                        <span>
-                          <li><i class="fa fa-check-circle"></i> Verified Creator: Varifed</li>
-                        </span>
-                        <span>
-                          <li><i class="fa fa-star"></i> Avg Rating: 4.5/5</li>
-                        </span>
+              <form class="form-signup" action="" method="post" name="form">
+                <label for="Username">Username</label>
+                <input class="form-styling" type="Username" name="Username" placeholder="" />
+                <label for="phone">Phone number</label>
+                <input class="form-styling" type="number" name="phone" placeholder="" />
+                <label for="Email">E-MAIL</label>
+                <input class="form-styling" type="Mail" name="Email" placeholder="" />
+                <label for="confirmpassword">Password</label>
+                <input class="form-styling" type="password" name="password_1" placeholder="" />
+                <label for="confirmpassword">Confirm Password</label>
+                <input class="form-styling" type="password" name="password_2" placeholder="" />
+                <a ng-click="checked = !checked" class="btn-signup">SIGN UP</a>
+              </form>
+              <form class="form-forgot-pass" action="" method="post" name="form">
+                <label for="Email">E-MAIL</label>
+                <a  class="btn-signup">requst a msg</a>
+              </form>
 
-
-                        <div class="main-button">
-                          <a href="about.html">Explore Profile</a>
-                        </div>
-                        <p>Discover top UGC creators based in Switzerland who bring creativity and expertise to your
-                          projects. These creators offer a range of services tailored to various needs</p>
-                        <ul class="info">
-                          <li><i class="fa fa-user"></i>UGC Creators</li>
-                          <li><i class="fa fa-briefcase"></i> 320 Projects Completed</li>
-                          <li><i class="fa fa-dollar-sign"></i> Avg Project Cost:400LE</li>
-                        </ul>
-                        <div class="text-button">
-                          <a href="about.html">Learn More About Our Creators<i class="fa fa-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div class="success">
+                </svg width="270" height="270" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" id="check"
+                  ng-class="checked ? 'checked' : ''">
+                </path fill="#ffffff"
+                  d="M40.61,23.03L26.67,36.97L13.495,23.788c-1.146-1.147-1.359-2.936-0.504-4.314c3.894-6.28,11.169-10.243,19.283-9.348c9.258,1.021,16.694,8.542,17.622,17.81c1.232,12.295-8.683,22.607-20.849,22.042c-9.9-0.46-18.128-8.344-18.972-18.218c-0.292-3.416,0.276-6.673,1.51-9.578">
+                <div class="successtext">
+                  <p> Thanks for signing up! Check your email for confirmation.</p>
                 </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="item">
-                  <div class="row">
-                    <div class="col-lg-4 col-sm-5">
-                      <div class="image">
-                        <img src="assets/images/country-02.jpg" alt="">
-                      </div>
-                    </div>
-                    <div class="col-lg-8 col-sm-7">
-                      <div class="right-content">
-                        <h4>CARIBBEAN</h4>
-                        <span>North America</span>
-                        <div class="main-button">
-                          <a href="about.html">Explore More</a>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                          labore dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-                        <ul class="info">
-                          <li><i class="fa fa-user"></i> 44.48 Mil People</li>
-                          <li><i class="fa fa-globe"></i> 275.400 km2</li>
-                          <li><i class="fa fa-home"></i> $946.000</li>
-                        </ul>
-                        <div class="text-button">
-                          <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <div class="item last-item">
-                  <div class="row">
-                    <div class="col-lg-4 col-sm-5">
-                      <div class="image">
-                        <img src="assets/images/country-03.jpg" alt="">
-                      </div>
-                    </div>
-                    <div class="col-lg-8 col-sm-7">
-                      <div class="right-content">
-                        <h4>FRANCE</h4>
-                        <span>Europe</span>
-                        <div class="main-button">
-                          <a href="about.html">Explore More</a>
-                        </div>
-                        <p>We hope this WoOx template is useful for you, please support us a <a
-                            href="https://paypal.me/templatemo" target="_blank">small amount of PayPal</a> to info [at]
-                          templatemo.com for our survival. We really appreciate your contribution.</p>
-                        <ul class="info">
-                          <li><i class="fa fa-user"></i> 67.41 Mil People</li>
-                          <li><i class="fa fa-globe"></i> 551.500 km2</li>
-                          <li><i class="fa fa-home"></i> $425.600</li>
-                        </ul>
-                        <div class="text-button">
-                          <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12">
-                <ul class="page-numbers">
-                  <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
-                  <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
-                </ul>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="side-bar-map">
-            <div class="row">
-              <div class="col-lg-12">
-                <div id="map">
-                  <img src="assets/images/co1.jpg" alt="">
 
-                </div>
-              </div>
+            <div class="forgot">
+              <a  onclick="show_forget()">Forgot your password?</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="modal fade " id="forgetpass" tabindex="-1" aria-labelledby="forgetpasslabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
 
-  <div class="call-to-action">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8">
-          <h2>Ready to Elevate Your Content?</h2>
-          <h4>Connect with top UGC creators by clicking the button below.</h4>
-        </div>
-        <div class="col-lg-4">
-          <div class="border-button">
-            <a href="create-profile.html">Get Started Now</a>
+          
+          <div class="frame ">
+            <div class="div-close-forg">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="frame-forget form-forgot-pass" action="" method="post" name="form">
+                <p>Forget Password</p>
+                <label for="Email">E-MAIL</label>
+                <input class="form-styling" type="Username" name="forgetemail" placeholder="" />
+
+                <a  class="btn-signup">requst a msg</a>
+              </form>
+
+              <div class="success">
+                </svg width="270" height="270" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" id="check"
+                  ng-class="checked ? 'checked' : ''">
+                </path fill="#ffffff"
+                  d="M40.61,23.03L26.67,36.97L13.495,23.788c-1.146-1.147-1.359-2.936-0.504-4.314c3.894-6.28,11.169-10.243,19.283-9.348c9.258,1.021,16.694,8.542,17.622,17.81c1.232,12.295-8.683,22.607-20.849,22.042c-9.9-0.46-18.128-8.344-18.972-18.218c-0.292-3.416,0.276-6.673,1.51-9.578">
+                <div class="successtext">
+                  <p>msg sent succ</p>
+                </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
- <!-- ***** Footer Start ***** -->
-<footer style="background-color: #333; color: #fff; padding: 50px 0;">
-  <div style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 15px;">
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-      <!-- Company Information -->
-      <div style="flex: 1; min-width: 250px; margin-bottom: 30px;">
-        <div>
-          <h4 style="color: #f2f2f2; margin-bottom: 20px;">Agency Information</h4>
-          <p style="margin-bottom: 10px;"><strong>Address:</strong> 123 Creative Avenue, New York, NY, USA</p>
-          <p style="margin-bottom: 10px;"><strong>Phone:</strong> <a href="tel:+1234567890" style="color: #fff; text-decoration: none;">+123 456 789 (0)</a></p>
-          <p style="margin-bottom: 10px;"><strong>Email:</strong> <a href="mailto:contact@ugc-creators.com" style="color: #fff; text-decoration: none;">contact@ugc-creators.com</a></p>
-          <p style="margin-bottom: 10px;"><strong>WhatsApp:</strong> <a href="https://wa.me/1234567890" style="color: #fff; text-decoration: none;">+123 456 789 (0)</a></p>
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
 
-      <!-- Social Media Links -->
-      <div style="flex: 1; min-width: 250px; margin-bottom: 30px;">
-        <div>
-          <h4 style="color: #f2f2f2; margin-bottom: 20px;">Follow Us</h4>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 10px;"><a href="https://www.instagram.com/yourprofile" target="_blank" style="color: #fff; text-decoration: none;">Instagram</a></li>
-            <li style="margin-bottom: 10px;"><a href="https://www.tiktok.com/@yourprofile" target="_blank" style="color: #fff; text-decoration: none;">TikTok</a></li>
-            <li style="margin-bottom: 10px;"><a href="https://www.facebook.com/yourprofile" target="_blank" style="color: #fff; text-decoration: none;">Facebook</a></li>
-            <li style="margin-bottom: 10px;"><a href="https://www.linkedin.com/company/yourprofile" target="_blank" style="color: #fff; text-decoration: none;">LinkedIn</a></li>
-          </ul>
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="main-nav">
+              <!-- ***** Logo Start ***** -->
+              <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="">
+              </a>
+              <!-- ***** Logo End ***** -->
+              <!-- ***** Menu Start ***** -->
+              <ul class="nav">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="deals.html">Deals</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="reservation.html">Book Yours</a></li>
+                <div class="main-button">
+                  <a href="about.html"> Sign Up</a>
+                </div>
+              </ul>
+              <a class='menu-trigger'>
+                <span>Menu</span>
+              </a>
+              <!-- ***** Menu End ***** -->
+            </nav>
+          </div>
         </div>
       </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
 
-      <!-- Newsletter Signup -->
-      <div style="flex: 1; min-width: 250px; margin-bottom: 30px;">
-        <div>
-          <h4 style="color: #f2f2f2; margin-bottom: 20px;">Subscribe to Our Newsletter Offers</h4>
-          <form id="newsletter-form" method="post" action="#">
-            <div style="margin-bottom: 10px;">
-              
-              <input type="email" name="email" placeholder="Your Email Address" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 4px;">
-              <input type="email" name="phoneNumber" placeholder="Your Phone Number" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 4px;">
+    <!-- ***** Main Banner Area Start ***** -->
+    <section id="section-1">
+      <div class="content-slider">
+        <input type="radio" id="banner1" class="sec-1-input" name="banner" checked>
+        <input type="radio" id="banner2" class="sec-1-input" name="banner">
+        <input type="radio" id="banner3" class="sec-1-input" name="banner">
+        <input type="radio" id="banner4" class="sec-1-input" name="banner">
+        <div class="slider">
+          <div id="top-banner-1" class="banner">
+            <div class="banner-inner-wrapper header-text">
+              <div class="main-caption">
+                <h2>Take a Glimpse Into The Beautiful Country Of:</h2>
+                <h1>Caribbean</h1>
+                <div class="border-button"><a href="about.html">Go There</a></div>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="more-info">
+                      <div class="row">
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <i class="fa fa-users"></i>
+                          <h4><span>Creators:</span><br>150+</h4>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <i class="fa fa-dollar-sign"></i>
+                          <h4><span>Start Price:</span><br>$500</h4>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <i class="fa fa-globe"></i>
+                          <h4><span>Countries:</span><br>3</h4>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <div class="main-button">
+                            <a href="contact.html">Get in Touch</a>
+                          </div>
+                        </div>
 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div id="top-banner-2" class="banner">
+            <div class="banner-inner-wrapper header-text">
+              <div class="main-caption">
+                <h2>Take a Glimpse Into The Beautiful Country Of:</h2>
+                <h1>Switzerland</h1>
+                <div class="border-button"><a href="about.html">Go There</a></div>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="more-info">
+                      <div class="row">
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <i class="fa fa-user"></i>
+                          <h4><span>Population:</span><br>8.66 M</h4>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <i class="fa fa-globe"></i>
+                          <h4><span>Territory:</span><br>41.290 KM<em>2</em></h4>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <i class="fa fa-home"></i>
+                          <h4><span>AVG Price:</span><br>$1.100.200</h4>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <div class="main-button">
+                            <a href="about.html">Explore More</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="top-banner-3" class="banner">
+            <div class="banner-inner-wrapper header-text">
+              <div class="main-caption">
+                <h2>Take a Glimpse Into The Beautiful Country Of:</h2>
+                <h1>France</h1>
+                <div class="border-button"><a href="about.html">Go There</a></div>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="more-info">
+                      <div class="row">
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <i class="fa fa-user"></i>
+                          <h4><span>Population:</span><br>67.41 M</h4>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <i class="fa fa-globe"></i>
+                          <h4><span>Territory:</span><br>551.500 KM<em>2</em></h4>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <i class="fa fa-home"></i>
+                          <h4><span>AVG Price:</span><br>$425.600</h4>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <div class="main-button">
+                            <a href="about.html">Explore More</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="top-banner-4" class="banner">
+            <div class="banner-inner-wrapper header-text">
+              <div class="main-caption">
+                <h2>Take a Glimpse Into The Beautiful Country Of:</h2>
+                <h1>Thailand</h1>
+                <div class="border-button"><a href="about.html">Go There</a></div>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="more-info">
+                      <div class="row">
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <i class="fa fa-user"></i>
+                          <h4><span>Population:</span><br>69.86 M</h4>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <i class="fa fa-globe"></i>
+                          <h4><span>Territory:</span><br>513.120 KM<em>2</em></h4>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <i class="fa fa-home"></i>
+                          <h4><span>AVG Price:</span><br>$165.450</h4>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-6">
+                          <div class="main-button">
+                            <a href="about.html">Explore More</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav>
+          <div class="controls">
+            <label for="banner1"><span class="progressbar"><span class="progressbar-fill"></span></span><span
+                class="text">1</span></label>
+            <label for="banner2"><span class="progressbar"><span class="progressbar-fill"></span></span><span
+                class="text">2</span></label>
+            <label for="banner3"><span class="progressbar"><span class="progressbar-fill"></span></span><span
+                class="text">3</span></label>
+            <label for="banner4"><span class="progressbar"><span class="progressbar-fill"></span></span><span
+                class="text">4</span></label>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <!-- ***** Main Banner Area End ***** -->
 
+    <div class="visit-country">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="section-heading">
+              <h2>Discover Creative Content Creators</h2>
+              <p>Do you want to save time and money? Benefit from UGC services and avoid spending hours searching for
+                content creators. Imagine being able to create diverse content quickly and affordably.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="items">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-lg-4 col-sm-5">
+                        <div class="image">
+                          <img src="assets/images/content Creator.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="col-lg-8 col-sm-7">
+                        <div class="right-content">
+                          <h4>Randa</h4>
+                          <span>
+                            <li><i class="fa fa-check-circle"></i> Verified Creator: Varifed</li>
+                          </span>
+                          <span>
+                            <li><i class="fa fa-star"></i> Avg Rating: 4.5/5</li>
+                          </span>
+
+
+                          <div class="main-button">
+                            <a href="about.html">Explore Profile</a>
+                          </div>
+                          <p>Discover top UGC creators based in Switzerland who bring creativity and expertise to your
+                            projects. These creators offer a range of services tailored to various needs</p>
+                          <div class="conat">
+                            <p>news paper reading</p>
+                          </div>
+                          <ul class="info">
+                            <li><i class="fa fa-user"></i>UGC Creators</li>
+                            <li><i class="fa fa-briefcase"></i> 320 Projects Completed</li>
+                            <li><i class="fa fa-dollar-sign"></i> Avg Project Cost:400LE</li>
+                          </ul>
+                          <div class="text-button">
+                            <a href="about.html">Learn More About Our Creators<i class="fa fa-arrow-right"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-lg-4 col-sm-5">
+                        <div class="image">
+                          <img src="assets/images/content Creator.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="col-lg-8 col-sm-7">
+                        <div class="right-content">
+                          <h4>Randa</h4>
+                          <span>
+                            <li><i class="fa fa-check-circle"></i> Verified Creator: Varifed</li>
+                          </span>
+                          <span>
+                            <li><i class="fa fa-star"></i> Avg Rating: 4.5/5</li>
+                          </span>
+
+
+                          <div class="main-button">
+                            <a href="about.html">Explore Profile</a>
+                          </div>
+                          <p>Discover top UGC creators based in Switzerland who bring creativity and expertise to your
+                            projects. These creators offer a range of services tailored to various needs</p>
+                          <div class="conat">
+                            <p>news paper reading</p>
+                          </div>
+                          <ul class="info">
+                            <li><i class="fa fa-user"></i>UGC Creators</li>
+                            <li><i class="fa fa-briefcase"></i> 320 Projects Completed</li>
+                            <li><i class="fa fa-dollar-sign"></i> Avg Project Cost:400LE</li>
+                          </ul>
+                          <div class="text-button">
+                            <a href="about.html">Learn More About Our Creators<i class="fa fa-arrow-right"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-lg-4 col-sm-5">
+                        <div class="image">
+                          <img src="assets/images/content Creator.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="col-lg-8 col-sm-7">
+                        <div class="right-content">
+                          <h4>Randa</h4>
+                          <span>
+                            <li><i class="fa fa-check-circle"></i> Verified Creator: Varifed</li>
+                          </span>
+                          <span>
+                            <li><i class="fa fa-star"></i> Avg Rating: 4.5/5</li>
+                          </span>
+
+
+                          <div class="main-button">
+                            <a href="about.html">Explore Profile</a>
+                          </div>
+                          <p>Discover top UGC creators based in Switzerland who bring creativity and expertise to your
+                            projects. These creators offer a range of services tailored to various needs</p>
+                          <div class="conat">
+                            <p>news paper reading</p>
+                          </div>
+                          <ul class="info">
+                            <li><i class="fa fa-user"></i>UGC Creators</li>
+                            <li><i class="fa fa-briefcase"></i> 320 Projects Completed</li>
+                            <li><i class="fa fa-dollar-sign"></i> Avg Project Cost:400LE</li>
+                          </ul>
+                          <div class="text-button">
+                            <a href="about.html">Learn More About Our Creators<i class="fa fa-arrow-right"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="side-bar-map">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div id="map">
+                    <img src="assets/images/co1.jpg" alt="">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h2>Ready to Elevate Your Content?</h2>
+            <h4>Connect with top UGC creators by clicking the button below.</h4>
+          </div>
+          <div class="col-lg-4">
+            <div class="border-button">
+              <a href="create-profile.html">Get Started Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Footer Start ***** -->
+    <footer style="background-color: #333; color: #fff; padding: 50px 0;">
+      <div style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+          <!-- Company Information -->
+          <div style="flex: 1; min-width: 250px; margin-bottom: 30px;">
             <div>
-              <button type="submit" style="background-color: #f2f2f2; color: #333; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px;">Subscribe</button>
+              <h4 style="color: #f2f2f2; margin-bottom: 20px;">Agency Information</h4>
+              <p style="margin-bottom: 10px;"><strong>Address:</strong> 123 Creative Avenue, New York, NY, USA</p>
+              <p style="margin-bottom: 10px;"><strong>Phone:</strong> <a href="tel:+1234567890"
+                  style="color: #fff; text-decoration: none;">+123 456 789 (0)</a></p>
+              <p style="margin-bottom: 10px;"><strong>Email:</strong> <a href="mailto:contact@ugc-creators.com"
+                  style="color: #fff; text-decoration: none;">contact@ugc-creators.com</a></p>
+              <p style="margin-bottom: 10px;"><strong>WhatsApp:</strong> <a href="https://wa.me/1234567890"
+                  style="color: #fff; text-decoration: none;">+123 456 789 (0)</a></p>
             </div>
-          </form>
+          </div>
+
+          <!-- Social Media Links -->
+          <div style="flex: 1; min-width: 250px; margin-bottom: 30px;">
+            <div>
+              <h4 style="color: #f2f2f2; margin-bottom: 20px;">Follow Us</h4>
+              <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;"><a href="https://www.instagram.com/yourprofile" target="_blank"
+                    style="color: #fff; text-decoration: none;">Instagram</a></li>
+                <li style="margin-bottom: 10px;"><a href="https://www.tiktok.com/@yourprofile" target="_blank"
+                    style="color: #fff; text-decoration: none;">TikTok</a></li>
+                <li style="margin-bottom: 10px;"><a href="https://www.facebook.com/yourprofile" target="_blank"
+                    style="color: #fff; text-decoration: none;">Facebook</a></li>
+                <li style="margin-bottom: 10px;"><a href="https://www.linkedin.com/company/yourprofile" target="_blank"
+                    style="color: #fff; text-decoration: none;">LinkedIn</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Newsletter Signup -->
+          <div style="flex: 1; min-width: 250px; margin-bottom: 30px;">
+            <div>
+              <h4 style="color: #f2f2f2; margin-bottom: 20px;">Subscribe to Our Newsletter Offers</h4>
+              <form id="newsletter-form" method="post" action="#">
+                <div style="margin-bottom: 10px;">
+
+                  <input type="email" name="email" placeholder="Your Email Address" required
+                    style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 4px;">
+                  <input type="email" name="phoneNumber" placeholder="Your Phone Number" required
+                    style="width: 100%; padding: 10px; margin-bottom: 10px; border: none; border-radius: 4px;">
+
+                </div>
+
+                <div>
+                  <button type="submit"
+                    style="background-color: #f2f2f2; color: #333; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px;">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</footer>
-<!-- ***** Footer End ***** -->
+    </footer>
+    <!-- ***** Footer End ***** -->
 
-  
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/wow.js"></script>
-  <script src="assets/js/tabs.js"></script>
-  <script src="assets/js/popup.js"></script>
-  <script src="assets/js/custom.js"></script>
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-  <script>
-    function bannerSwitcher() {
-      next = $('.sec-1-input').filter(':checked').next('.sec-1-input');
-      if (next.length) next.prop('checked', true);
-      else $('.sec-1-input').first().prop('checked', true);
-    }
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/popup.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/myjs.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-    var bannerTimer = setInterval(bannerSwitcher, 5000);
+    <script>
+      function bannerSwitcher() {
+        next = $('.sec-1-input').filter(':checked').next('.sec-1-input');
+        if (next.length) next.prop('checked', true);
+        else $('.sec-1-input').first().prop('checked', true);
+      }
 
-    $('nav .controls label').click(function () {
-      clearInterval(bannerTimer);
-      bannerTimer = setInterval(bannerSwitcher, 5000)
-    });
-  </script>
+      var bannerTimer = setInterval(bannerSwitcher, 5000);
+
+      $('nav .controls label').click(function () {
+        clearInterval(bannerTimer);
+        bannerTimer = setInterval(bannerSwitcher, 5000)
+      });
+    </script>
 
 </body>
 

@@ -172,10 +172,10 @@ body {
 
 .main-button a {
   font-size: 14px;
-  color: #fff;
-  background-color: #22b3c1;
+  color: #22b3c1;
+  background-color: white;
   border: 1px solid #22b3c1;
-  padding: 12px 30px;
+  padding: 8px 26px;
   display: inline-block;
   border-radius: 25px;
   font-weight: 500;
@@ -424,13 +424,13 @@ Header Style
 }
 
 .header-area .main-nav .nav li a.active::after {
-  width: 20px;
+  width: 60%;
   height: 2px;
   background-color: #fff;
   position: absolute;
   content: '';
   left: 15px;
-  top: 2px;
+  bottom: 2px;
 }
 
 .background-header .main-nav .nav li:hover a,
@@ -2326,4 +2326,18 @@ body {
   .weekly-offers .container-fluid {
     padding: 0px;
   }
+}
+
+
+.conat>p {
+  font-size: 12px;
+  color: white !important;
+  margin:10px  0 !important;
+}
+.conat{
+  padding: 0px 10px;
+  border-radius: 5px;
+  width: fit-content;
+  height: fit-content;
+  background-color: #1da1f2;
 }
