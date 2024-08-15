@@ -10,6 +10,11 @@
     rel="stylesheet">
 
   <title>WoOx Travel Bootstrap 5 Theme</title>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+  
+  <script src="assets/js/firebase.js" type="module"></script>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -593,9 +598,15 @@
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/myjs.js"></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script type="module">
+      import { signup } from './assets/js/firebase.js';
 
+      // Example of calling the signup function
+      signup("heyhhhhh@gmail.com", "asdaddsadASAS644");
+  </script>
     <script>
-      function bannerSwitcher() {
+
+        function bannerSwitcher() {
         next = $('.sec-1-input').filter(':checked').next('.sec-1-input');
         if (next.length) next.prop('checked', true);
         else $('.sec-1-input').first().prop('checked', true);
