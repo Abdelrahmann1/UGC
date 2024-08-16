@@ -1,6 +1,6 @@
   // Import the functions you need from the SDKs
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+  import { getFirestore, collection, query, where, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
   import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
   // Your Firebase configuration
@@ -19,14 +19,20 @@
   const db = getFirestore(app);
   const auth = getAuth(app);
 
+  
+  
+  
   // Function to add data to Firestore
-  export async function addDataToFirestore(data,tabelname) {
+  export async function addDataToFirestore(data, tabelname) {
+    // alert("Attempting to add document...");
     try {
       const docRef = await addDoc(collection(db, tabelname), data);
-      console.log("Document written with ID: ", docRef.id);
-      window.location.reload();
+      // alert("Document written with ID: " + docRef.id);
+      console.log("Document successfully written!", docRef.id);
+      // window.location.reload();
     } catch (error) {
-      alert("Error adding document: "+ error);
+      // alert("Error adding document: " + error.message);
+      console.error("Error adding document:", error);
     }
   }
 
@@ -35,26 +41,61 @@
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-      addDataToFirestore({email, password,username,phone},"users")
-      alert("User created successfully: "+ user);
-      // window.location.reload();
-    } catch (error) {
-      alert("Error creating new user: "+error.message);
+      function containsProsCom(email) {
+        const regex = /@pros\.com$/;
+        return regex.test(email);
     }
-  }
-
-  // Function to sign in a user with email and password
-  export async function signInUser(email, password) {
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-      alert("User signed in successfully: "+ user);
+    if (containsProsCom(email)) {
+      await addDataToFirestore({email,username,phone},"vendor")
+    }else{
+      await addDataToFirestore({email,username,phone},"users")
+    }
+      alert("User created successfully: "+ user);
       window.location.reload();
     } catch (error) {
-      alert("Error signing in: "+ error.message);
+      alert("Error creating new user: "+error.message);
+      window.location.reload();
+
     }
   }
-
+  export async function signInUser(email, password, checkbox) {
+    try {
+      // Await the signInWithEmailAndPassword function
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+  
+      // Check if the user successfully signed in
+      if (userCredential) {
+        const user = userCredential.user;
+  
+        // Get Firestore instance
+        const db = getFirestore();
+  
+        // Query Firestore to get the username
+        const q = query(collection(db, "users"), where("email", "==", email));
+        const querySnapshot = await getDocs(q);
+  
+        let username = "";
+        if (!querySnapshot.empty) {
+          const userDoc = querySnapshot.docs[0];
+          username = userDoc.data().username;
+        }
+  
+        // If the checkbox is checked, store user details in localStorage
+        if (checkbox) {
+          localStorage.setItem('uid', user.uid);
+          localStorage.setItem('email', user.email);
+          localStorage.setItem('username', username); // Store the username
+        }
+  
+        // Notify the user of successful sign-in
+        alert("User signed in successfully: " + username);
+        window.location.reload();
+      }
+    } catch (error) {
+      // Handle any errors that occur during sign-in
+      alert('Error signing in: '+ error.code+" "+ error.message);
+    }
+  }
   // Function to send a password reset email
   export async function resetPassword(email) {
     try {
@@ -66,16 +107,43 @@
       alert("Error sending password reset email: "+error.message);
     }
   }
-
-  // Example of using the addDataToFirestore function
-  const data = { sds: "sdsda" };
+function checkifsingedin() {
+  if (localStorage.getItem('uid') && localStorage.getItem('email')) {
+    const signUpLink = document.getElementById('signUpLink');
+    const userEmailDiv = document.getElementById('userEmail');
   
-  // Example of using the authentication functions
-  const email = "testuser@example.com";
-  const password = "examplePassword";
+    // Get the stored UID and email from localStorage
+    const storedUID = localStorage.getItem('uid');
+    const storedEmail = localStorage.getItem('email');
+    const storedusername = localStorage.getItem('username');
+  
+    // Check if the user is signed in by retrieving the current user
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in, check if the stored UID matches the current user's UID
+        if (user.uid === storedUID) {
+          // UIDs match, hide the "Sign Up" link and display the email
+          signUpLink.style.display = 'none';
+          userEmailDiv.style.display = 'block';
+          userEmailDiv.textContent = `Welcome, ${storedusername}`;
+        } else {
+          // UIDs don't match, log the user out or handle the mismatch
+          console.error('UID mismatch: Stored UID does not match current user.');
+          // Optionally, you could sign the user out:
+          // auth.signOut();
+        }
+      } else {
+        // No user is signed in, ensure the "Sign Up" link is visible
+        signUpLink.style.display = 'block';
+        userEmailDiv.style.display = 'none';
+      }
+    });
+} else {
+    loadingModal.show();
+}
+}
 
-  // Uncomment the following lines to test the functions:
-  // createNewUser(email, password);   // To create a new user
-  // signInUser(email, password);      // To sign in an existing user
-  // resetPassword(email);             // To send a password reset email
-
+window.onload = function() {
+  // Get references to the elements
+  checkifsingedin();
+};
