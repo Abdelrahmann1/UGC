@@ -60,6 +60,7 @@
                 <p id="errorMessage1" style="color: red; display: none;"></p>
 
                 <button class="btn-signup" type="submit" id="btn-signin">SIGN IN</button>
+                <button class="btn-signup" onclick="handleSignInwithgoogle()">SIGN IN with google</button>
 
               </form>
 
@@ -604,8 +605,8 @@
   <!-- Firebase App (the core Firebase SDK) -->
 
   <script type="module">
-    import { addDataToFirestore, createNewUser, signInUser, resetPassword } from "./assets/js/firebase.js";
-    // window.greetFromModule = greet;
+    import { addDataToFirestore, createNewUser, signInUser, resetPassword ,signInWithGoogle} from "./assets/js/firebase.js";
+    window.signInWithGoogle = signInWithGoogle;
     window.addDataToFirestore = addDataToFirestore;
     window.createNewUser = createNewUser;
     window.signInUser = signInUser;
@@ -681,6 +682,9 @@
     }
 
     // Function to handle signing in a user
+    function handleSignInwithgoogle() {
+      signInWithGoogle();
+    }
     function handleSignIn() {
       event.preventDefault();
       const email = document.getElementById('username1').value;

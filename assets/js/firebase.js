@@ -1,7 +1,7 @@
   // Import the functions you need from the SDKs
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
   import { getFirestore, collection, query, where, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+  import { getAuth,GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
   // Your Firebase configuration
   const firebaseConfig = {
@@ -18,8 +18,36 @@
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
   const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
 
   
+  export async function signInWithGoogle() {
+  
+    try {
+      const result = await signInWithPopup(auth, provider);
+  
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+  
+      // The signed-in user info.
+      const user = result.user;
+  alert(user)
+      // Store user info in localStorage or your desired state management
+      localStorage.setItem('uid', user.uid);
+      localStorage.setItem('email', user.email);
+      localStorage.setItem('username', user.displayName);
+  
+      // Optionally, you can store the user data in Firestore if you haven't already
+      // await addDataToFirestore({ email: user.email, username: user.displayName, phone: user.phoneNumber }, "users");
+  
+      alert(`Welcome ${user.displayName}!`);
+      window.location.reload(); // Reload after successful sign-in
+    } catch (error) {
+      console.error('Error during Google sign-in:', error);
+      alert("Google sign-in failed: " + error.message);
+    }
+  }
   
   
   // Function to add data to Firestore
@@ -50,7 +78,7 @@
     }else{
       await addDataToFirestore({email,username,phone},"users")
     }
-      alert("User created successfully: "+ user);
+      alert("User created successfully");
       window.location.reload();
     } catch (error) {
       alert("Error creating new user: "+error.message);
