@@ -1,8 +1,10 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+  // Import the functions you need from the SDKs
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
 
-const firebaseConfig = {
+  // Your Firebase configuration
+  const firebaseConfig = {
     apiKey: "AIzaSyA80DaelCukmOH_ejU1ANPgpsfwsMbs-e0",
     authDomain: "propaganda-mktg.firebaseapp.com",
     projectId: "propaganda-mktg",
@@ -12,75 +14,68 @@ const firebaseConfig = {
     measurementId: "G-M5E9WG411F"
   };
 
-  // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-// Initialize Firebase Authentication and get a reference to the service
-const auth = getAuth(app);
-const db = getFirestore(app);
-  // Initialize Firebase
-// var db = firebase.firestore();
-// const auth = firebase.auth();
-// // let data = {};
-// data["Date"] = "formattedDate";
+  // Initialize Firebase and Firestore
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const auth = getAuth(app);
 
-// db.collection('orders').add(data)
-// .then(() => {
-//     alert('Order submitted successfully!');
-// })
-// .catch((error) => {
+  // Function to add data to Firestore
+  export async function addDataToFirestore(data,tabelname) {
+    try {
+      const docRef = await addDoc(collection(db, tabelname), data);
+      console.log("Document written with ID: ", docRef.id);
+      window.location.reload();
+    } catch (error) {
+      alert("Error adding document: "+ error);
+    }
+  }
 
-//     console.error('Error submitting order: ', error);
-// });
+  // Function to create a new user with email and password
+  export async function createNewUser(email, password,username,phone) {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      addDataToFirestore({email, password,username,phone},"users")
+      alert("User created successfully: "+ user);
+      // window.location.reload();
+    } catch (error) {
+      alert("Error creating new user: "+error.message);
+    }
+  }
 
+  // Function to sign in a user with email and password
+  export async function signInUser(email, password) {
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      alert("User signed in successfully: "+ user);
+      window.location.reload();
+    } catch (error) {
+      alert("Error signing in: "+ error.message);
+    }
+  }
 
+  // Function to send a password reset email
+  export async function resetPassword(email) {
+    try {
+      await sendPasswordResetEmail(auth, email);
+      alert("Password reset email sent!");
+    window.location.reload();
 
-// auth.createUserWithEmailAndPassword("email"," password")
-//   .then((userCredential) => {
-//     // Signed in 
-//     var user = userCredential.user;
-//     // ...
-//   })
-//   .catch((error) => {
-//     var errorCode = error.code;
-//     var errorMessage = error.message;
-//     // ..
-//   });
+    } catch (error) {
+      alert("Error sending password reset email: "+error.message);
+    }
+  }
 
-// //   firebase.auth().signInWithEmailAndPassword(email, password)
-// //   .then((userCredential) => {
-// //     // Signed in
-// //     var user = userCredential.user;
-// //     // ...
-// //   })
-// //   .catch((error) => {
-// //     var errorCode = error.code;
-// //     var errorMessage = error.message;
-// //   });
-export function signup(email,pass) {
-    createUserWithEmailAndPassword(email, pass)
-      .then((userCredential) => {
-        // User created successfully
-        var user = userCredential.user;
-        console.log('User signed up:', user);
-      })
-      .catch((error) => {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log
-        ('Error during sign-up: '+ errorCode+" "+ errorMessage);
-      });
-}
+  // Example of using the addDataToFirestore function
+  const data = { sds: "sdsda" };
+  
+  // Example of using the authentication functions
+  const email = "testuser@example.com";
+  const password = "examplePassword";
 
-// Example of adding a document to Firestore
-const data = {
-  Date: "formattedDate"
-};
+  // Uncomment the following lines to test the functions:
+  // createNewUser(email, password);   // To create a new user
+  // signInUser(email, password);      // To sign in an existing user
+  // resetPassword(email);             // To send a password reset email
 
-// addDoc(collection(db, 'orders'), data)
-//   .then(() => {
-//     alert('Order submitted successfully!');
-//   })
-//   .catch((error) => {
-//     console.error('Error submitting order: ', error);
-//   });
