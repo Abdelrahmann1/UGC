@@ -9,7 +9,7 @@ const loadingModal = new bootstrap.Modal(document.getElementById('loadingModal')
     keyboard: false,
     backdrop: 'static'
 });
-loadingModal.show();
+// loadingModal.show();
 // loadingModal.hide();
 
 $(function() {
