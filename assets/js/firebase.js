@@ -135,7 +135,7 @@
       alert("Error sending password reset email: "+error.message);
     }
   }
-function checkifsingedin() {
+  export async  function checkifsingedin() {
   if (localStorage.getItem('uid') && localStorage.getItem('email')) {
     const signUpLink = document.getElementById('signUpLink');
     const userEmailDiv = document.getElementById('userEmail');

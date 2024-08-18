@@ -377,10 +377,12 @@ Header Style
 .background-header .main-nav .logo img {
   width: 159px;
 }
-
+.ml-auto{
+  margin-left: auto;
+}
 .header-area .main-nav .nav {
   flex-basis: 70%;
-  justify-content: flex-end;
+  justify-content: flex-start;
   vertical-align: middle;
   margin-top: 15px;
   margin-right: 0px;
@@ -927,7 +929,13 @@ Banner Style
   }
 }
 
-
+.contati-text{
+  padding: 0 !important;
+}
+.main-button{
+  display: flex;
+  align-items: center;
+}
 /* 
 ---------------------------------------------
 Visit Country Style
@@ -935,7 +943,7 @@ Visit Country Style
 */
 
 .visit-country {
-  margin-top: 120px;
+  margin-top: 60px;
 }
 
 .visit-country .side-bar-map {

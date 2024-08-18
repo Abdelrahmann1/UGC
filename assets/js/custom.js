@@ -265,3 +265,13 @@
 
 
 })(window.jQuery);
+const colors = ["#FF5733", "#33FF57", "#3357FF", "#FF33A1", "#FF8C33"];
+
+// Select all elements with the class "conat"
+const elements = document.querySelectorAll('.conat');
+
+// Loop through each element and assign a random background color
+elements.forEach(element => {
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    element.style.backgroundColor = randomColor;
+});
