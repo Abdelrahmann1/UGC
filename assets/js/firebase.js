@@ -154,6 +154,11 @@
           signUpLink.style.display = 'none';
           userEmailDiv.style.display = 'block';
           userEmailDiv.textContent = `Welcome, ${storedusername}`;
+          if (user.photoURL) {
+            var profilePicUrl = user.photoURL;
+            var imgElement = document.getElementById('profile-pic');
+            imgElement.src = profilePicUrl;
+          }
         } else {
           // UIDs don't match, log the user out or handle the mismatch
           console.error('UID mismatch: Stored UID does not match current user.');

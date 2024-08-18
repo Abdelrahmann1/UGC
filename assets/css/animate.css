@@ -3101,7 +3101,12 @@
 input[type="radio"]:checked ~ .slider .banner {
     opacity: 1;
 }
-
+#profile-pic{
+ border-radius: 50%;
+ height: 50px;
+ width: 50px;
+ margin: 0 10px;
+}
 .progressbar-fill {
     transition: width 5s linear; /* Match this to your JavaScript interval time */
 }
