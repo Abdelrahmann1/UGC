@@ -3093,7 +3093,19 @@
             box-shadow: 0 0 15px #fffd;
     -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
   }
-  
+  .banner {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+input[type="radio"]:checked ~ .slider .banner {
+    opacity: 1;
+}
+
+.progressbar-fill {
+    transition: width 5s linear; /* Match this to your JavaScript interval time */
+}
+
   #drag-container p {
     font-family: Serif;
     position: absolute;

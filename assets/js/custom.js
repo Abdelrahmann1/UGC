@@ -1,3 +1,16 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const banners = document.querySelectorAll('.sec-1-input');
+    let currentIndex = 0;
+    const bannerCount = banners.length;
+    const intervalTime = 5000; // Set the interval time in milliseconds (5000ms = 5s)
+
+    setInterval(() => {
+        banners[currentIndex].checked = false; // Uncheck the current banner
+        currentIndex = (currentIndex + 1) % bannerCount; // Move to the next banner (loop back to the start)
+        banners[currentIndex].checked = true; // Check the next banner
+    }, intervalTime);
+});
+
 (function ($) {
 	
 	"use strict";
@@ -265,7 +278,28 @@
 
 
 })(window.jQuery);
-const colors = ["#FF5733", "#33FF57", "#3357FF", "#FF33A1", "#FF8C33"];
+const colors = [
+    "#FF5733", // Vibrant Red-Orange
+    "#33FF57", // Bright Green
+    "#3357FF", // Bright Blue
+    "#FF33A1", // Hot Pink
+    "#FF8C33", // Orange
+    "#33FFF0", // Aqua
+    "#8C33FF", // Purple
+    "#FF3333", // Bright Red
+    "#33FF8C", // Mint Green
+    "#FF5733", // Deep Orange
+    "#33D4FF", // Sky Blue
+    "#FF33FF", // Magenta
+    "#FFBD33", // Mustard Yellow
+    "#33FFBD", // Soft Teal
+    "#FF33D4", // Neon Pink
+    "#33A1FF", // Light Blue
+    "#FF33BD", // Bright Pink
+    "#A1FF33", // Lime Green
+    "#FF5733", // Coral
+    "#5733FF", // Indigo
+];
 
 // Select all elements with the class "conat"
 const elements = document.querySelectorAll('.conat');
