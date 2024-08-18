@@ -943,7 +943,7 @@ Visit Country Style
 */
 
 .visit-country {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .visit-country .side-bar-map {
@@ -988,15 +988,43 @@ Visit Country Style
   color: #fff;
   opacity: 0.8;
 }
-
+.carousel-control-next-icon,.carousel-control-prev-icon{
+  width: 3rem;
+  height: 3rem;
+  filter: invert(100%);
+}
+.carousel-indicators [data-bs-target]{
+  background-color: black;
+  width: 50px;
+  border-radius: 11px;
+  height: 7px;
+}
 .visit-country .item .right-content p {
   margin: 18px 0px;
 }
-
+.card-img-top{
+  border-radius: 10px;
+}
+.carousel-indicators{
+  bottom: -3rem;
+}
+.cardat{
+  display: flex ;
+  width: 100%;
+  justify-content: center;
+  gap: 2rem;
+}
+.fa-check-circle::before{
+color: cornflowerblue;
+}
+.fa-star::before {
+  color:rgb(255, 189, 51);
+}
 .visit-country .item .right-content ul {
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   padding: 15px 0px;
+  display: flex;
 }
 
 .visit-country .item .right-content ul li {
@@ -2205,9 +2233,20 @@ body {
 @media (max-width: 575px) {
 
 }
-
-
+.visit-country2 .item .right-content ul li{
+  width: 28% !important;
+}
+@media (min-width: 767px) {
+  .conat>p {
+    /* font-size: 7px !important; */
+    margin:5px  0 !important;
+  }
+}
 @media (max-width: 767px) {
+  .conat>p {
+    font-size: 6px !important;
+    margin:5px  0 !important;
+  }
   #section-1 .content-slider .slider .banner .banner-inner-wrapper {
     padding-top: 120px;
   }
@@ -2338,9 +2377,10 @@ body {
 
 
 .conat>p {
-  font-size: 12px;
+  font-size: 10px;
   color: white !important;
   margin:10px  0 !important;
+  text-align: center;
 }
 .conat{
   padding: 0px 10px;

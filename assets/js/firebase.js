@@ -20,7 +20,10 @@
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
-  
+  function containsProsCom(email) {
+    const regex = /@pros\.com$/;
+    return regex.test(email);
+}
   export async function signInWithGoogle() {
   
     try {
@@ -32,7 +35,13 @@
   
       // The signed-in user info.
       const user = result.user;
-  alert(user)
+      var emails= user.email;
+      var username= user.displayName;
+      if (containsProsCom(user.email)) {
+        await addDataToFirestore({emails,username},"vendor")
+      }else{
+        await addDataToFirestore({email,username,phone},"users")
+      }      
       // Store user info in localStorage or your desired state management
       localStorage.setItem('uid', user.uid);
       localStorage.setItem('email', user.email);
@@ -69,10 +78,7 @@
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-      function containsProsCom(email) {
-        const regex = /@pros\.com$/;
-        return regex.test(email);
-    }
+
     if (containsProsCom(email)) {
       await addDataToFirestore({email,username,phone},"vendor")
     }else{
