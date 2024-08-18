@@ -3097,7 +3097,12 @@
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
-
+#signupdivbtn{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 input[type="radio"]:checked ~ .slider .banner {
     opacity: 1;
 }

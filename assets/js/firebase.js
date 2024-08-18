@@ -139,6 +139,7 @@
   if (localStorage.getItem('uid') && localStorage.getItem('email')) {
     const signUpLink = document.getElementById('signUpLink');
     const userEmailDiv = document.getElementById('userEmail');
+    const signupdivbtn = document.getElementById('signupdivbtn');
   
     // Get the stored UID and email from localStorage
     const storedUID = localStorage.getItem('uid');
@@ -152,11 +153,13 @@
         if (user.uid === storedUID) {
           // UIDs match, hide the "Sign Up" link and display the email
           signUpLink.style.display = 'none';
+          signupdivbtn.style.display = 'none';
           userEmailDiv.style.display = 'block';
-          userEmailDiv.textContent = `Welcome, ${storedusername}`;
+          userEmailDiv.textContent = `${storedusername}`;
           if (user.photoURL) {
             var profilePicUrl = user.photoURL;
             var imgElement = document.getElementById('profile-pic');
+            imgElement.style.display = 'block';
             imgElement.src = profilePicUrl;
           }
         } else {
