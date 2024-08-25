@@ -438,3 +438,31 @@ h1 {
   text-align: center;
 }
 
+
+
+.your-carousel{
+margin: 0 20px;
+}
+.your-carousel .video-slide {
+  padding: 10px; /* Optional: add padding between slides */
+}
+
+.your-carousel .video-content {
+  width: 100%; 
+  height: 400px !important;
+}
+
+@media (max-width: 500px) {
+
+  .your-carousel .video-content {
+    margin-bottom: 10px;
+    /* width: 100%; Ensure videos take the full width of their container */
+    /* height: 300px !important; */
+  }
+}
+  @media (max-width: 768px) {
+  .your-carousel .video-content {
+    width: 100%; /* Full width on mobile */
+    height: auto;
+  }
+}

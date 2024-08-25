@@ -1008,12 +1008,7 @@ Visit Country Style
 .carousel-indicators{
   bottom: -3rem;
 }
-.cardat{
-  display: flex ;
-  width: 100%;
-  justify-content: center;
-  gap: 2rem;
-}
+
 .fa-check-circle::before{
 color: cornflowerblue;
 }
