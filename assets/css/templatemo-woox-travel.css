@@ -979,7 +979,7 @@ Visit Country Style
 .visit-country .item .right-content .main-button {
   position: absolute;
   right: 0;
-  top: 0;
+  top: -0.8rem;
 }
 
 .visit-country .item .right-content .main-button a:hover {
@@ -1015,11 +1015,15 @@ color: cornflowerblue;
 .fa-star::before {
   color:rgb(255, 189, 51);
 }
+.skills{
+  width: auto;
+}
 .visit-country .item .right-content ul {
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   padding: 15px 0px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .visit-country .item .right-content ul li {
@@ -2229,7 +2233,7 @@ body {
 
 }
 .visit-country2 .item .right-content ul li{
-  width: 28% !important;
+  width: 28% ;
 }
 @media (min-width: 767px) {
   .conat>p {
@@ -2239,7 +2243,7 @@ body {
 }
 @media (max-width: 767px) {
   .conat>p {
-    font-size: 6px !important;
+    font-size: 13px !important;
     margin:5px  0 !important;
   }
   #section-1 .content-slider .slider .banner .banner-inner-wrapper {
@@ -2268,8 +2272,8 @@ body {
     margin-top: 8px;
   }
   .visit-country .item .right-content .main-button a {
-    font-size: 14px;
-    padding: 12px 15px;
+    font-size: 12px;
+    padding: 6px 16px;
   }
   .main-button a {
     text-align: center;
@@ -2289,6 +2293,9 @@ body {
 }
 
 @media (max-width: 992px) {
+  .skills{
+    width: auto !important;
+  }
   #section-1 .more-info {
     margin-top: 60px;
   }
@@ -2306,7 +2313,7 @@ body {
     width: 15%;
   }
   .visit-country .item .right-content ul li {
-    width: 30% !important;
+    width: 30% ;
   }
   .visit-country .item .right-content {
     position: relative;
@@ -2372,7 +2379,7 @@ body {
 
 
 .conat>p {
-  font-size: 10px;
+  font-size: 15px;
   color: white !important;
   margin:10px  0 !important;
   text-align: center;

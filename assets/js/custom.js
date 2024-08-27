@@ -278,34 +278,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 })(window.jQuery);
-const colors = [
-    "#FF5733", // Vibrant Red-Orange
-    "#33FF57", // Bright Green
-    "#3357FF", // Bright Blue
-    "#FF33A1", // Hot Pink
-    "#FF8C33", // Orange
-    "#33FFF0", // Aqua
-    "#8C33FF", // Purple
-    "#FF3333", // Bright Red
-    "#33FF8C", // Mint Green
-    "#FF5733", // Deep Orange
-    "#33D4FF", // Sky Blue
-    "#FF33FF", // Magenta
-    "#FFBD33", // Mustard Yellow
-    "#33FFBD", // Soft Teal
-    "#FF33D4", // Neon Pink
-    "#33A1FF", // Light Blue
-    "#FF33BD", // Bright Pink
-    "#A1FF33", // Lime Green
-    "#FF5733", // Coral
-    "#5733FF", // Indigo
-];
-
-// Select all elements with the class "conat"
-const elements = document.querySelectorAll('.conat');
-
-// Loop through each element and assign a random background color
-elements.forEach(element => {
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    element.style.backgroundColor = randomColor;
-});
