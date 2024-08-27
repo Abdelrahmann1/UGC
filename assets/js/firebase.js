@@ -310,7 +310,6 @@ export async function checkifsingedin() {
       }
     });
   } else {
-    loadingModal.show();
   }
 }
 
