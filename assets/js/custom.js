@@ -278,3 +278,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 })(window.jQuery);
+// JavaScript Function to Set Random Background Color for .conat
+function setRandomBgColor() {
+	const containers = document.querySelectorAll('.conat');
+  
+	// Array of colors to choose from
+	const colors = [
+	  '#4C0391', // Default color
+	  '#94B6F2', // Tomato red
+	  '#AD7FF7', // Slate blue
+	  '#BEE3FC', // Lime green
+	  '#94B6F2', // Gold
+	  '#4C0391', // Hot pink
+	  '#C54DE2', // Light sea green
+	  '#AD7FF7', // Orange red
+	  '#C54DE2', // Cornflower blue
+	  '#BEE3FC'  // Blue violet
+	];
+  
+	containers.forEach((container) => {
+		// Select a random color from the array
+		const randomColor = colors[Math.floor(Math.random() * colors.length)];
+	
+		// Set the background color of the current .conat container
+		container.style.backgroundColor = randomColor;
+	  });
+  }
+  
+  // Call the function to set a random background color when the page loads
+  window.onload = setRandomBgColor();
+  

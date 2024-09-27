@@ -82,12 +82,10 @@ justify-content: end;
 } */
 
 li {
-  padding-left: 10px;
   font-size: 18px;
   display: inline;
   text-align: left;
   text-transform: uppercase;
-  padding-right: 10px;
   /* color: #ffffff; */
 }
 
