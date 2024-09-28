@@ -308,3 +308,17 @@ function setRandomBgColor() {
   // Call the function to set a random background color when the page loads
   window.onload = setRandomBgColor();
   
+
+  function setupVideoControls() {
+	const videos = document.querySelectorAll('.video-content');
+	videos.forEach(video => {
+	  video.addEventListener('click', () => {
+		if (video.paused) {
+		  video.play();
+		} else {
+		  video.pause();
+		}
+	  });
+	});
+  }
+  document.addEventListener('DOMContentLoaded', setupVideoControls);

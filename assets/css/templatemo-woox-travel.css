@@ -269,13 +269,12 @@ section {
   position: relative;
   z-index: 2;
   margin-top: 0px;
-  margin-bottom: 80px;
   text-align: left;
 }
 
 .section-heading h2 {
   margin-top: 0px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   line-height: 36px;
   font-size: 30px;
   font-weight: 700;
@@ -2564,6 +2563,7 @@ body {
 }
 
 .items {
+  transform: scale(.9); /* Slight scale up on hover */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2589,7 +2589,7 @@ body {
 }
 #map>p:first-child{
   font-size: 30px;
-  font-weight: 800;
+  font-weight: 500;
 }
 #ugc-cosntainer{
   width: 100%;
@@ -2632,7 +2632,7 @@ body {
 
 /* Optional Hover Effect */
 .items:hover {
-  transform: scale(1.01); /* Slight scale up on hover */
+  transform: scale(.95); /* Slight scale up on hover */
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
@@ -2647,6 +2647,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-right: 0 !important;
 }
 
 .main-button {
@@ -2680,54 +2681,44 @@ body {
   color: #ffffff;
   background: linear-gradient(
     30deg,
-    /* Adjust angle if needed */ #4c0391 0%,
-    /* Start with the first color */ #ad7ff7 8%,
-    /* Second color stop */ #94b6f2 78%,
-    /* Third color stop */ #bee3fc 100% /* End with the fourth color */
-  );
+    #b583e4 0%,  /* Start color */
+    #AD7FF7 8%,   /* Second color */
+    #94B6F2 78%,  /* Third color */
+    #BEE3FC 100%  /* End color */
+  ); /* Apply gradient */
   transition: background 0.3s ease-in-out;
 }
 
 .btn-get-small a:hover {
   background: linear-gradient(
     30deg,
-    #4c0391 0%,
-    #ad7ff7 8%,
-    #94b6f2 78%,
-    #bee3fc 100%
-  );
+    #b583e4 0%,  /* Start color */
+    #AD7FF7 8%,   /* Second color */
+    #94B6F2 78%,  /* Third color */
+    #BEE3FC 100%  /* End color */
+  ); /* Apply gradient */
   opacity: 0.9; /* Optional hover effect */
 }
-.hr{
+hr{
+
   border: none; /* Remove default border */
   height: 5px; /* Height of the line */
   background: linear-gradient(
     30deg,
-    #4C0391 0%,  /* Start color */
-    #AD7FF7 8%,  /* Second color */
-    #94B6F2 78%, /* Third color */
-    #BEE3FC 100% /* End color */
-  );
+    #b583e4 0%,  /* Start color */
+    #AD7FF7 8%,   /* Second color */
+    #94B6F2 78%,  /* Third color */
+    #BEE3FC 100%  /* End color */
+  ); /* Apply gradient */
   border-radius: 30px; /* Rounded edges for the line */
-  margin: 2rem 0; /* Spacing around the hr */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
   transition: transform 0.3s ease-in-out; /* Smooth hover transition */
+  margin: 5px 0px !important;
+}
+.hr{
   width: 65%;
 }
 .hr-2{
-  border: none; /* Remove default border */
-  height: 5px; /* Height of the line */
-  background: linear-gradient(
-    30deg,
-    #4C0391 0%,  /* Start color */
-    #AD7FF7 8%,  /* Second color */
-    #6583b8 78%, /* Third color */
-    #BEE3FC 100% /* End color */
-  );
-  border-radius: 30px; /* Rounded edges for the line */
-  margin: 2rem 0; /* Spacing around the hr */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-  transition: transform 0.3s ease-in-out; /* Smooth hover transition */
   width: 100%;
 }
 .bio-title{
@@ -2745,7 +2736,7 @@ body {
 .li-cad:nth-child(2) {
   position: relative; /* Positioning context for the pseudo-element */
   /* height: 5px; Height of the line */
-  padding: 0 20px ;
+  padding: 0 20px  !important;
 }
 
 /* Using a pseudo-element to create the gradient border */
@@ -2758,7 +2749,7 @@ body {
   height: 100%; /* Match the height of the line */
   background: linear-gradient(
     30deg,
-    #4C0391 0%,  /* Start color */
+    #b583e4 0%,  /* Start color */
     #AD7FF7 8%,   /* Second color */
     #94B6F2 78%,  /* Third color */
     #BEE3FC 100%  /* End color */
@@ -2775,7 +2766,7 @@ body {
   height: 100%; /* Match the height of the line */
   background: linear-gradient(
     30deg,
-    #4C0391 0%,  /* Start color */
+    #b583e4 0%,  /* Start color */
     #AD7FF7 8%,   /* Second color */
     #94B6F2 78%,  /* Third color */
     #BEE3FC 100%  /* End color */
@@ -2784,4 +2775,98 @@ body {
 .verify-icon{
 width: 25px;
 height: 25px;
+}
+.speaking-text{
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+.speaking-text >p {
+  font-size: 16px;
+  color: #afafaf !important;
+}
+.li-cad:last-child {
+margin-left: 2%;
+}
+.why-big-it >p{
+  font-size: 30px ;
+  font-weight: 800;
+}
+.card-why-title{
+  margin: 5% 0;
+  font-size: 28px ;
+  font-weight: 700;
+  color: white;
+}
+.card-why-desc{
+  font-size: 20px ;
+  font-weight: 500;
+  color: white;
+}.card-why{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1%;
+  background: linear-gradient(
+    30deg,
+    #b583e4 0%,  /* Start color */
+    #AD7FF7 8%,   /* Second color */
+    #94B6F2 78%,  /* Third color */
+    #BEE3FC 100%  /* End color */
+  ); /* Apply gradient */
+  padding: 40px 20px;
+}
+.card-why-img{
+  width: 290px;
+  height: 300px;
+}
+.Aboutus-title{
+  margin: 2% 0 1% 0;
+  font-size: 28px ;
+  font-weight: 700;
+}
+.Aboutus-desc{
+  margin: 0% 0 2% 0;
+  font-size: 20px ;
+  font-weight: 500;
+}
+.Ready-title{
+  margin: 3% 0 1% 0;
+  font-size: 28px ;
+  font-weight: 600;
+}
+.Ready-desc{
+  font-size: 19px ;
+  font-weight: 500;
+}
+
+.card-Some-img{
+width: 200px;
+height: 200px;
+}
+.card-Some{
+width: 80%;
+display: flex;
+justify-content: space-evenly;
+
+}
+.row-some{
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(
+    30deg,
+    #b583e4 0%,  /* Start color */
+    #AD7FF7 8%,   /* Second color */
+    #94B6F2 78%,  /* Third color */
+    #BEE3FC 100%  /* End color */
+  ); /* Apply gradient */
+  padding: 2% 0;
+
+}
+.row-some-work{
+  display: flex;
+  justify-content: center;
+
 }
